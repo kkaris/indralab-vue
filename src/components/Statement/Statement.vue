@@ -1,6 +1,6 @@
 <template>
   <div class="statement">
-    <div class="row clickable" @click="toggleList">
+    <div class="row clickable align-items-center" @click="toggleList">
       <div class="col text-left">
         <h5>
           <span v-html='english'></span>
