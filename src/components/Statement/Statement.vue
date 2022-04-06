@@ -4,6 +4,13 @@
       <div class="col text-left">
         <h5>
           <span v-html='english'></span>
+        </h5>
+      </div>
+      <template v-if="sources_left_of_badges">
+        <div class="col-auto text-right" v-if="sources">
+          <source-display :source_counts="sources"></source-display>
+        </div>
+        <div class="col-auto">
           <small v-for='badge in displayed_badges'
                 :class="`badge badge-pill float-${badge.loc}`"
                 :style="`background-color: ${badge.color}; color: white;`"
@@ -15,11 +22,26 @@
                     {{ badge.symbol }}{{ badge.num }}</a>
               <span v-else>{{ badge.symbol }}{{ badge.num }}</span>
           </small>
-        </h5>
-      </div>
-      <div class="col-auto text-right" v-if="sources">
-        <source-display :source_counts="sources"></source-display>
-      </div>
+        </div>
+      </template>
+      <template v-else>
+        <div class="col-auto">
+          <small v-for='badge in displayed_badges'
+                :class="`badge badge-pill float-${badge.loc}`"
+                :style="`background-color: ${badge.color}; color: white;`"
+                :title="badge.title"
+                :key='badge.label'>
+              <a v-if='badge.href'
+                :style="`background-color: ${badge.color}; color: white;`"
+                :href='badge.href' target="_blank">
+                    {{ badge.symbol }}{{ badge.num }}</a>
+              <span v-else>{{ badge.symbol }}{{ badge.num }}</span>
+          </small>
+        </div>
+        <div class="col-auto text-right" v-if="sources">
+          <source-display :source_counts="sources"></source-display>
+        </div>
+      </template>
     </div>
     <div class="row">
       <div class="col">
@@ -79,6 +101,10 @@
         default: false
       },
       show_total_ev_only: {
+        type: Boolean,
+        default: false
+      },
+      sources_left_of_badges: {
         type: Boolean,
         default: false
       },
