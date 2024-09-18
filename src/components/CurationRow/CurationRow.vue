@@ -141,7 +141,8 @@
         if (this.num_prior_curations > 0) {
           this.getCurations();
         } else {
-          console.log('No prior curations to load.');
+          // No prior curations to load
+          window.console.log('No prior curations to load.');
         }
       },
 
