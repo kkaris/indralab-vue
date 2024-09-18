@@ -32,7 +32,7 @@
         OR
         <button class="agent-select-button btn btn-primary"
                 @click='lookupOptions'>
-            Ground with GILDA
+            Ground with Gilda
         </button>
         <span v-show='searching'>Searching...</span>
         <span v-show='options_empty'>No groundings found...</span>
@@ -43,7 +43,7 @@
         </i>
       </span>
       <span v-else-if="options.length === 1">
-        <span class="label">GILDA grounding:</span>
+        <span class="label">Gilda grounding:</span>
         <span class='form-control' v-html="printOption(options[0])"></span>
         <button class="btn btn-primary"
                 @click='resetOptions'>
@@ -51,7 +51,7 @@
         </button>
       </span>
       <span v-else>
-        <span class="label">GILDA grounding:</span>
+        <span class="label">Gilda grounding:</span>
         <select class="form-control" v-model='selected_option_idx'>
           <option :value='-1' selected disabled hidden>Select grounding option...</option>
           <option v-for='(option, option_idx) in options'
