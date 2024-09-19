@@ -27,7 +27,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "minimist": ">=1.2.3",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.7.16"
   },
   "eslintConfig": {
     "root": true,
