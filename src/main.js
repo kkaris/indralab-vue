@@ -8,6 +8,7 @@ install(Vue)
 // Set up Vue prototype properties that components may expect
 // For development, you can point this to your local API or a mock server
 Vue.prototype.$agent_url = process.env.VUE_APP_AGENT_URL || 'http://localhost:5000/api/statements/query/agents'
+Vue.prototype.$ground_url = process.env.VUE_APP_GROUND_URL || 'http://localhost:5000/ground'
 
 Vue.config.productionTip = false
 
